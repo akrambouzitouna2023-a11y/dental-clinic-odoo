@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_patient_tree" model="ir.ui.view">
+        <field name="name">dental.patient.tree</field>
+        <field name="model">dental.patient</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'new'" decoration-warning="state == 'in_progress'" decoration-success="state == 'done'">
+                <field name="full_name"/>
+                <field name="age"/>
+                <field name="phone"/>
+                <field name="treatment_category"/>
+                <field name="total_price"/>
+                <field name="amount_paid"/>
+                <field name="remaining_amount"/>
+                <field name="payment_status" widget="badge" decoration-success="payment_status == 'paid'" decoration-warning="payment_status == 'partial'" decoration-danger="payment_status == 'unpaid'"/>
+                <field name="state" widget="badge"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_patient_form" model="ir.ui.view">
+        <field name="name">dental.patient.form</field>
+        <field name="model">dental.patient</field>
+        <field name="arch" type="xml">
+            <form string="Dental Clinic">
+                <header>
+                    <button name="action_done" string="Complete" type="object" class="btn-success" invisible="state != 'in_progress'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,in_progress,done"/>
+                </header>
+                <sheet>
+                    <div style="background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%); padding: 30px; border-radius: 20px; min-height: 600px;">
+                        <div style="text-align: center; margin-bottom: 40px;">
+                            <h1 style="color: #1565c0; font-size: 42px; font-weight: bold; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                Dental Clinic
+                            </h1>
+                            <p style="color: #64b5f6; font-size: 18px; margin-top: 10px;">Patient Registration</p>
+                        </div>
+
+                        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1); margin-bottom: 25px;">
+                            <h2 style="color: #1565c0; font-size: 24px; margin-bottom: 25px; border-bottom: 3px solid #64b5f6; padding-bottom: 10px;">
+                                Patient Information
+                            </h2>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">First Name</span>
+                                    <field name="name" placeholder="Enter first name"/>
+                                </div>
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Last Name</span>
+                                    <field name="last_name" placeholder="Enter last name"/>
+                                </div>
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Age</span>
+                                    <field name="age" placeholder="Enter age"/>
+                                </div>
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Phone Number</span>
+                                    <field name="phone" placeholder="Enter phone number"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1); margin-bottom: 25px;">
+                            <h2 style="color: #1565c0; font-size: 24px; margin-bottom: 25px; border-bottom: 3px solid #64b5f6; padding-bottom: 10px;">
+                                Treatment Details
+                            </h2>
+                            <div style="display: grid; grid-template-columns: 1fr; gap: 25px;">
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Treatment Category</span>
+                                    <field name="treatment_category" widget="radio" options="{'horizontal': true}"/>
+                                </div>
+                                <div invisible="treatment_category != 'fixe'">
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Prothèse Fixe Type</span>
+                                    <field name="fixe_type" widget="radio" options="{'horizontal': true}"/>
+                                </div>
+                                <div invisible="treatment_category != 'amovible'">
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Prothèse Amovible Type</span>
+                                    <field name="amovible_type" widget="radio" options="{'horizontal': true}"/>
+                                </div>
+                                <div invisible="amovible_type != 'partielle'">
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Partielle Subtype</span>
+                                    <field name="partielle_subtype" widget="radio" options="{'horizontal': true}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%); padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(255, 152, 0, 0.1); margin-bottom: 25px; border: 2px solid #ffe0b2;">
+                            <h2 style="color: #e65100; font-size: 24px; margin-bottom: 25px; border-bottom: 3px solid #ff9800; padding-bottom: 10px;">
+                                Payment Information
+                            </h2>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                                <div>
+                                    <span style="color: #2e7d32; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Total Price (DZD)</span>
+                                    <field name="total_price" placeholder="0.00"/>
+                                </div>
+                                <div>
+                                    <span style="color: #e65100; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Amount Paid (DZD)</span>
+                                    <field name="amount_paid" placeholder="0.00"/>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; padding: 20px; background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-radius: 12px; border: 2px solid #ef5350; text-align: center;">
+                                <span style="color: #c62828; font-size: 18px; font-weight: 600;">Remaining Amount: </span>
+                                <field name="remaining_amount"/>
+                                <span style="margin-left: 15px;">
+                                    <field name="payment_status"/>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-bottom: 25px;" invisible="state != 'new'">
+                            <button name="action_start" string="Start Treatment" type="object" class="btn-primary" style="font-size: 20px; padding: 15px 50px; border-radius: 12px;"/>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%); padding: 25px; border-radius: 15px; color: white; text-align: center;">
+                            <div style="font-size: 18px; margin-bottom: 10px;">Date: <field name="date" nolabel="1"/></div>
+                            <div style="font-size: 20px; font-weight: bold;">Status: <field name="state" nolabel="1"/></div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_patient_search" model="ir.ui.view">
+        <field name="name">dental.patient.search</field>
+        <field name="model">dental.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="full_name"/>
+                <field name="phone"/>
+                <separator/>
+                <filter name="today" string="Today" domain="[('date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter name="this_month" string="This Month" domain="[('date', '>=', (context_today() + relativedelta(day=1)).strftime('%Y-%m-%d')), ('date', '&lt;=', (context_today() + relativedelta(months=1, day=1, days=-1)).strftime('%Y-%m-%d'))]"/>
+                <filter name="this_year" string="This Year" domain="[('date', '>=', (context_today() + relativedelta(month=1, day=1)).strftime('%Y-%m-%d')), ('date', '&lt;=', (context_today() + relativedelta(month=12, day=31)).strftime('%Y-%m-%d'))]"/>
+                <filter name="paid" string="Paid" domain="[('payment_status', '=', 'paid')]"/>
+                <filter name="unpaid" string="Unpaid" domain="[('payment_status', '=', 'unpaid')]"/>
+                <filter name="partial" string="Partial" domain="[('payment_status', '=', 'partial')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_date_day" string="Day" context="{'group_by': 'date:day'}"/>
+                    <filter name="group_by_date_month" string="Month" context="{'group_by': 'date:month'}"/>
+                    <filter name="group_by_date_year" string="Year" context="{'group_by': 'date:year'}"/>
+                    <filter name="group_by_payment" string="Payment Status" context="{'group_by': 'payment_status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_patient_graph" model="ir.ui.view">
+        <field name="name">dental.patient.graph</field>
+        <field name="model">dental.patient</field>
+        <field name="arch" type="xml">
+            <graph string="Revenue Analysis" type="bar">
+                <field name="date" interval="day"/>
+                <field name="total_price" type="measure"/>
+                <field name="amount_paid" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_patient_pivot" model="ir.ui.view">
+        <field name="name">dental.patient.pivot</field>
+        <field name="model">dental.patient</field>
+        <field name="arch" type="xml">
+            <pivot string="Revenue Analysis">
+                <field name="date" type="row" interval="month"/>
+                <field name="treatment_category" type="col"/>
+                <field name="total_price" type="measure"/>
+                <field name="amount_paid" type="measure"/>
+                <field name="remaining_amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_patients" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">dental.patient</field>
+        <field name="view_mode">tree,form,graph,pivot</field>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="menu_dental_root" name="Dental Clinic" sequence="10"/>
+    <menuitem id="menu_dental_patients" name="Patients" parent="menu_dental_root" action="action_patients" sequence="1"/>
+</odoo>

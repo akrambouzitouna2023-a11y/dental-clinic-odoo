@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_purchase_tree" model="ir.ui.view">
+        <field name="name">dental.purchase.tree</field>
+        <field name="model">dental.purchase</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="material_name"/>
+                <field name="supplier"/>
+                <field name="quantity"/>
+                <field name="unit_price"/>
+                <field name="total_cost"/>
+                <field name="purchase_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_purchase_form" model="ir.ui.view">
+        <field name="name">dental.purchase.form</field>
+        <field name="model">dental.purchase</field>
+        <field name="arch" type="xml">
+            <form string="Purchases">
+                <sheet>
+                    <div style="background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%); padding: 30px; border-radius: 20px; min-height: 500px;">
+                        <div style="text-align: center; margin-bottom: 40px;">
+                            <h1 style="color: #1565c0; font-size: 42px; font-weight: bold; margin: 0;">Purchases</h1>
+                            <p style="color: #64b5f6; font-size: 18px; margin-top: 10px;">Materials and Supplies</p>
+                        </div>
+
+                        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(21, 101, 192, 0.1); margin-bottom: 25px;">
+                            <h2 style="color: #1565c0; font-size: 24px; margin-bottom: 25px; border-bottom: 3px solid #64b5f6; padding-bottom: 10px;">Purchase Details</h2>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Material Name</span>
+                                    <field name="material_name" placeholder="Enter material name"/>
+                                </div>
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Supplier</span>
+                                    <field name="supplier" placeholder="Enter supplier name"/>
+                                </div>
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Quantity</span>
+                                    <field name="quantity"/>
+                                </div>
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Unit Price (DZD)</span>
+                                    <field name="unit_price"/>
+                                </div>
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Purchase Date</span>
+                                    <field name="purchase_date"/>
+                                </div>
+                                <div>
+                                    <span style="color: #1565c0; font-size: 16px; font-weight: 600; display: block; margin-bottom: 8px;">Total Cost</span>
+                                    <field name="total_cost" readonly="1" style="background: #e3f2fd;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_purchases" model="ir.actions.act_window">
+        <field name="name">Purchases</field>
+        <field name="res_model">dental.purchase</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="menu_dental_purchases" name="Purchases" parent="menu_dental_root" action="action_purchases" sequence="2"/>
+</odoo>

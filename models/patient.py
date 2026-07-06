@@ -43,6 +43,15 @@ class DentalPatient(models.Model):
         ('amovible', 'Prothèse Amovible'),
     ], string='Treatment Category', required=True)
 
+    simple_treatment = fields.Selection([
+        ('extraction', 'Extraction'),
+        ('canal', 'Traitement Canalaire'),
+        ('obturation', 'Obturation'),
+        ('composite', 'Restauration Composite'),
+        ('detartrage', 'Detartrage'),
+        ('consultation', 'Consultation'),
+    ], string='Simple Treatment')
+
     # === Cost & Payment ===
     cost = fields.Float(string='Cost (DZD)')
     total_price = fields.Float(string='Total Price (DZD)', default=0.0)

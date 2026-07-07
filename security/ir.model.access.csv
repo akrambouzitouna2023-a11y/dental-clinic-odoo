@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_dental_patient_user,Dental Patient User,model_dental_patient,base.group_user,1,1,1,1
 access_dental_purchase_user,Dental Purchase User,model_dental_purchase,base.group_user,1,1,1,1
 access_dental_profit_report_user,Dental Profit Report User,model_dental_profit_report,base.group_user,1,1,1,1
+access_dental_tooth_user,Dental Tooth User,model_dental_tooth,base.group_user,1,1,1,1

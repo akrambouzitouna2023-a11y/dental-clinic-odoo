@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="100%" height="500">
+  <defs>
+    <style>
+      .tooth { cursor: pointer; transition: all 0.2s; }
+      .tooth:hover ellipse { fill: #e3f2fd; stroke-width: 3; }
+      .tooth ellipse { fill: #ffffff; stroke: #1565c0; stroke-width: 2; }
+      .tooth text { font-size: 11px; font-weight: bold; fill: #1565c0; pointer-events: none; }
+      .tooth.selected ellipse { fill: #1565c0; stroke: #0d47a1; }
+      .tooth.selected text { fill: #ffffff; }
+      .jaw-label { font-size: 14px; font-weight: bold; fill: #64b5f6; }
+      .center-line { stroke: #bbdefb; stroke-width: 2; stroke-dasharray: 8,4; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="600" fill="#f8fbff" rx="15"/>
+  
+  <!-- Title -->
+  <text x="250" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1565c0">Universal Numbering System (1-32)</text>
+  
+  <!-- Center divider -->
+  <line x1="250" y1="40" x2="250" y2="560" class="center-line"/>
+  
+  <!-- Upper Jaw Label -->
+  <text x="250" y="55" text-anchor="middle" class="jaw-label">UPPER JAW</text>
+  
+  <!-- ===== UPPER RIGHT (1-8) - Right side of chart ===== -->
+  <g class="tooth" id="t1" transform="translate(420, 80)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">1</text>
+  </g>
+  <g class="tooth" id="t2" transform="translate(420, 130)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">2</text>
+  </g>
+  <g class="tooth" id="t3" transform="translate(415, 180)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">3</text>
+  </g>
+  <g class="tooth" id="t4" transform="translate(405, 230)">
+    <ellipse cx="0" cy="0" rx="20" ry="24"/>
+    <text x="0" y="4" text-anchor="middle">4</text>
+  </g>
+  <g class="tooth" id="t5" transform="translate(390, 275)">
+    <ellipse cx="0" cy="0" rx="20" ry="24"/>
+    <text x="0" y="4" text-anchor="middle">5</text>
+  </g>
+  <g class="tooth" id="t6" transform="translate(370, 315)">
+    <ellipse cx="0" cy="0" rx="20" ry="24"/>
+    <text x="0" y="4" text-anchor="middle">6</text>
+  </g>
+  <g class="tooth" id="t7" transform="translate(345, 350)">
+    <ellipse cx="0" cy="0" rx="18" ry="22"/>
+    <text x="0" y="4" text-anchor="middle">7</text>
+  </g>
+  <g class="tooth" id="t8" transform="translate(315, 380)">
+    <ellipse cx="0" cy="0" rx="18" ry="22"/>
+    <text x="0" y="4" text-anchor="middle">8</text>
+  </g>
+  
+  <!-- ===== UPPER LEFT (9-16) - Left side of chart ===== -->
+  <g class="tooth" id="t9" transform="translate(185, 380)">
+    <ellipse cx="0" cy="0" rx="18" ry="22"/>
+    <text x="0" y="4" text-anchor="middle">9</text>
+  </g>
+  <g class="tooth" id="t10" transform="translate(155, 350)">
+    <ellipse cx="0" cy="0" rx="18" ry="22"/>
+    <text x="0" y="4" text-anchor="middle">10</text>
+  </g>
+  <g class="tooth" id="t11" transform="translate(130, 315)">
+    <ellipse cx="0" cy="0" rx="20" ry="24"/>
+    <text x="0" y="4" text-anchor="middle">11</text>
+  </g>
+  <g class="tooth" id="t12" transform="translate(110, 275)">
+    <ellipse cx="0" cy="0" rx="20" ry="24"/>
+    <text x="0" y="4" text-anchor="middle">12</text>
+  </g>
+  <g class="tooth" id="t13" transform="translate(95, 230)">
+    <ellipse cx="0" cy="0" rx="20" ry="24"/>
+    <text x="0" y="4" text-anchor="middle">13</text>
+  </g>
+  <g class="tooth" id="t14" transform="translate(85, 180)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">14</text>
+  </g>
+  <g class="tooth" id="t15" transform="translate(80, 130)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">15</text>
+  </g>
+  <g class="tooth" id="t16" transform="translate(80, 80)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">16</text>
+  </g>
+  
+  <!-- Lower Jaw Label -->
+  <text x="250" y="420" text-anchor="middle" class="jaw-label">LOWER JAW</text>
+  
+  <!-- ===== LOWER LEFT (17-24) - Left side of chart ===== -->
+  <g class="tooth" id="t17" transform="translate(80, 450)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">17</text>
+  </g>
+  <g class="tooth" id="t18" transform="translate(80, 500)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">18</text>
+  </g>
+  <g class="tooth" id="t19" transform="translate(85, 545)">
+    <ellipse cx="0" cy="0" rx="22" ry="24"/>
+    <text x="0" y="4" text-anchor="middle">19</text>
+  </g>
+  <g class="tooth" id="t20" transform="translate(110, 575)">
+    <ellipse cx="0" cy="0" rx="20" ry="22"/>
+    <text x="0" y="4" text-anchor="middle">20</text>
+  </g>
+  <g class="tooth" id="t21" transform="translate(140, 590)">
+    <ellipse cx="0" cy="0" rx="20" ry="22"/>
+    <text x="0" y="4" text-anchor="middle">21</text>
+  </g>
+  <g class="tooth" id="t22" transform="translate(175, 595)">
+    <ellipse cx="0" cy="0" rx="18" ry="20"/>
+    <text x="0" y="4" text-anchor="middle">22</text>
+  </g>
+  <g class="tooth" id="t23" transform="translate(210, 595)">
+    <ellipse cx="0" cy="0" rx="18" ry="20"/>
+    <text x="0" y="4" text-anchor="middle">23</text>
+  </g>
+  <g class="tooth" id="t24" transform="translate(245, 590)">
+    <ellipse cx="0" cy="0" rx="18" ry="20"/>
+    <text x="0" y="4" text-anchor="middle">24</text>
+  </g>
+  
+  <!-- ===== LOWER RIGHT (25-32) - Right side of chart ===== -->
+  <g class="tooth" id="t25" transform="translate(280, 590)">
+    <ellipse cx="0" cy="0" rx="18" ry="20"/>
+    <text x="0" y="4" text-anchor="middle">25</text>
+  </g>
+  <g class="tooth" id="t26" transform="translate(315, 595)">
+    <ellipse cx="0" cy="0" rx="18" ry="20"/>
+    <text x="0" y="4" text-anchor="middle">26</text>
+  </g>
+  <g class="tooth" id="t27" transform="translate(350, 590)">
+    <ellipse cx="0" cy="0" rx="20" ry="22"/>
+    <text x="0" y="4" text-anchor="middle">27</text>
+  </g>
+  <g class="tooth" id="t28" transform="translate(380, 575)">
+    <ellipse cx="0" cy="0" rx="20" ry="22"/>
+    <text x="0" y="4" text-anchor="middle">28</text>
+  </g>
+  <g class="tooth" id="t29" transform="translate(405, 545)">
+    <ellipse cx="0" cy="0" rx="22" ry="24"/>
+    <text x="0" y="4" text-anchor="middle">29</text>
+  </g>
+  <g class="tooth" id="t30" transform="translate(415, 500)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">30</text>
+  </g>
+  <g class="tooth" id="t31" transform="translate(420, 450)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">31</text>
+  </g>
+  <g class="tooth" id="t32" transform="translate(420, 400)">
+    <ellipse cx="0" cy="0" rx="22" ry="26"/>
+    <text x="0" y="4" text-anchor="middle">32</text>
+  </g>
+</svg>

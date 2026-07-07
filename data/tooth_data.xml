@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="tooth_1" model="dental.tooth"><field name="name">1 - Upper Right 3rd Molar</field><field name="number">1</field></record>
+        <record id="tooth_2" model="dental.tooth"><field name="name">2 - Upper Right 2nd Molar</field><field name="number">2</field></record>
+        <record id="tooth_3" model="dental.tooth"><field name="name">3 - Upper Right 1st Molar</field><field name="number">3</field></record>
+        <record id="tooth_4" model="dental.tooth"><field name="name">4 - Upper Right 2nd Premolar</field><field name="number">4</field></record>
+        <record id="tooth_5" model="dental.tooth"><field name="name">5 - Upper Right 1st Premolar</field><field name="number">5</field></record>
+        <record id="tooth_6" model="dental.tooth"><field name="name">6 - Upper Right Canine</field><field name="number">6</field></record>
+        <record id="tooth_7" model="dental.tooth"><field name="name">7 - Upper Right Lateral Incisor</field><field name="number">7</field></record>
+        <record id="tooth_8" model="dental.tooth"><field name="name">8 - Upper Right Central Incisor</field><field name="number">8</field></record>
+        <record id="tooth_9" model="dental.tooth"><field name="name">9 - Upper Left Central Incisor</field><field name="number">9</field></record>
+        <record id="tooth_10" model="dental.tooth"><field name="name">10 - Upper Left Lateral Incisor</field><field name="number">10</field></record>
+        <record id="tooth_11" model="dental.tooth"><field name="name">11 - Upper Left Canine</field><field name="number">11</field></record>
+        <record id="tooth_12" model="dental.tooth"><field name="name">12 - Upper Left 1st Premolar</field><field name="number">12</field></record>
+        <record id="tooth_13" model="dental.tooth"><field name="name">13 - Upper Left 2nd Premolar</field><field name="number">13</field></record>
+        <record id="tooth_14" model="dental.tooth"><field name="name">14 - Upper Left 1st Molar</field><field name="number">14</field></record>
+        <record id="tooth_15" model="dental.tooth"><field name="name">15 - Upper Left 2nd Molar</field><field name="number">15</field></record>
+        <record id="tooth_16" model="dental.tooth"><field name="name">16 - Upper Left 3rd Molar</field><field name="number">16</field></record>
+        <record id="tooth_17" model="dental.tooth"><field name="name">17 - Lower Left 3rd Molar</field><field name="number">17</field></record>
+        <record id="tooth_18" model="dental.tooth"><field name="name">18 - Lower Left 2nd Molar</field><field name="number">18</field></record>
+        <record id="tooth_19" model="dental.tooth"><field name="name">19 - Lower Left 1st Molar</field><field name="number">19</field></record>
+        <record id="tooth_20" model="dental.tooth"><field name="name">20 - Lower Left 2nd Premolar</field><field name="number">20</field></record>
+        <record id="tooth_21" model="dental.tooth"><field name="name">21 - Lower Left 1st Premolar</field><field name="number">21</field></record>
+        <record id="tooth_22" model="dental.tooth"><field name="name">22 - Lower Left Canine</field><field name="number">22</field></record>
+        <record id="tooth_23" model="dental.tooth"><field name="name">23 - Lower Left Lateral Incisor</field><field name="number">23</field></record>
+        <record id="tooth_24" model="dental.tooth"><field name="name">24 - Lower Left Central Incisor</field><field name="number">24</field></record>
+        <record id="tooth_25" model="dental.tooth"><field name="name">25 - Lower Right Central Incisor</field><field name="number">25</field></record>
+        <record id="tooth_26" model="dental.tooth"><field name="name">26 - Lower Right Lateral Incisor</field><field name="number">26</field></record>
+        <record id="tooth_27" model="dental.tooth"><field name="name">27 - Lower Right Canine</field><field name="number">27</field></record>
+        <record id="tooth_28" model="dental.tooth"><field name="name">28 - Lower Right 1st Premolar</field><field name="number">28</field></record>
+        <record id="tooth_29" model="dental.tooth"><field name="name">29 - Lower Right 2nd Premolar</field><field name="number">29</field></record>
+        <record id="tooth_30" model="dental.tooth"><field name="name">30 - Lower Right 1st Molar</field><field name="number">30</field></record>
+        <record id="tooth_31" model="dental.tooth"><field name="name">31 - Lower Right 2nd Molar</field><field name="number">31</field></record>
+        <record id="tooth_32" model="dental.tooth"><field name="name">32 - Lower Right 3rd Molar</field><field name="number">32</field></record>
+    </data>
+</odoo>
